@@ -1,3 +1,4 @@
+/*MenyBuganim 302490610 & BaruchRothkoff 311603252*/
 #include<iostream>
 using namespace std;
 
@@ -19,6 +20,10 @@ public:
 		value = copy.value;
 		id = copy.id;
 	}
+	int getValue(){ return value; }
+	int getId(){ return id; }
+	void setId(int id){ this->id = id; }
+	Node*getNext(){return next; }
 	~Node(){}
 };
 
@@ -27,6 +32,7 @@ class LinkedList{
 public:
 	LinkedList(){}
 	~LinkedList();
+	Node* getHead(){ return head; }
 	bool addElement(const int newVal);
 	bool addElement(const int newVal, int index);
 	bool removeElement(int index);

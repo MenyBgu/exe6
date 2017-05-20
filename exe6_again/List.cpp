@@ -1,10 +1,17 @@
+/*MenyBuganim 302490610 & BaruchRothkoff 311603252*/
 #include<iostream>
 #include"List.h"
 #include <assert.h>
 using namespace std;
 
 LinkedList::~LinkedList(){
-	//TODO destructor.
+	Node*temp = head;				//delete all elements.
+	Node*temp2 = temp;
+	while (temp != NULL){
+		temp2 = temp->next;
+		delete temp;
+		temp = temp2;
+	}
 }
 
 bool LinkedList::addElement(const int newVal){
@@ -63,11 +70,11 @@ bool LinkedList::addElement(const int newVal, int index){
 				cout << "new element : < " << temp2->id << " , " << temp2->value << " >" << endl;
 				temp2->next = temp->next;
 				temp->next = temp2;					//to add the new element i first created temp2 and put all we need in him, then connect him to the linkedlist.
-				return true;
 			}
 			temp = temp->next;
 		}
 	}
+	return true;
 }
 
 bool LinkedList::removeElement(int index){
@@ -96,13 +103,42 @@ bool LinkedList::removeElement(int index){
 		temp = temp->next;
 	Node*temp2 = temp->next;					//create temp2 to stand above what we want to delete.
 	temp->next = temp->next->next;			//moving 2 forward.
-	cout << "delete : < " << temp2->id << " , " <<temp2->value << " >" << endl;
+
+	int id1 = temp2->id;
+	int value1 = temp2->value;
 	delete temp2;
+	cout << "delete : < " << id1 << " , " << value1 << " >" << endl;
+
 	return true;
 }
 
 bool LinkedList::removeFirstElement(){
+	if (head == NULL){
+		cout << "list is empty." << endl;
+		return false;
+	}
+	Node*temp = head;
+	temp = temp->next;
+	int id1 = head->id;
+	int value1 = head->value;
+	delete head;
+	cout << "delete : < " << id1 << " , " << value1 << " >" << endl;
+	head = temp;
+	return true;
+}
 
+int LinkedList::size(){			
+	if (head == NULL){				//if null return 0.
+		cout << "list is empty." << endl;
+		return 0;
+	}
+	Node*temp = head;
+	int size = 0;
+	while (temp != NULL){		//count the size.
+		size++;
+		temp = temp->next;
+	}
+	return size;
 }
 
 void LinkedList::print(){							//print function.
@@ -110,9 +146,10 @@ void LinkedList::print(){							//print function.
 		cout << "list is empty." << endl;
 	}
 	Node*temp = head;
+	cout << "{ " << endl;
 	while (temp != NULL){
-		cout << "new element : < " << temp->id << " , " << temp->value << " >" << endl;
+		cout << " < " << temp->id << " , " << temp->value << " >" << endl;
 		temp = temp->next;
 	}
-
+	cout << "}" << endl;
 }

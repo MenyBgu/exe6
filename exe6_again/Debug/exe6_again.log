@@ -1,11 +1,8 @@
-﻿Build started 19/05/2017 11:25:34.
+﻿Build started 20/05/2017 11:40:58.
      1>Project "E:\VS2013\exe6_again\exe6_again\exe6_again.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt List.cpp simList.cpp
+         E:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt simList.cpp
          simList.cpp
-         List.cpp
-         Generating Code...
-     1>e:\vs2013\exe6_again\exe6_again\list.cpp(71): warning C4715: 'LinkedList::addElement' : not all control paths return a value
        Link:
          E:\Program Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\VS2013\exe6_again\Debug\exe6_again.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\VS2013\exe6_again\Debug\exe6_again.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\VS2013\exe6_again\Debug\exe6_again.lib" /MACHINE:X86 Debug\List.obj
          Debug\simList.obj
@@ -14,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.92
+Time Elapsed 00:00:00.60
