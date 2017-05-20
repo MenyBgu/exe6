@@ -71,12 +71,10 @@ int main(){
 LinkedList*reverseList(LinkedList & listToReverse){
 	LinkedList *newList = new LinkedList();					//reverse. 
 	assert(newList != NULL&&"Error,heap memory.");
-	//Node*current = newList->getHead();
 	Node*temp = listToReverse.getHead();	
 
 	while (temp != NULL){
-		newList->addElement(temp->getValue());
-		//current->setId(temp->getId());
+		newList->addElement(temp);
 		temp = temp->getNext();
 	}
 	cout << endl << endl;
@@ -86,14 +84,11 @@ LinkedList*reverseList(LinkedList & listToReverse){
 LinkedList*removeOddItems(LinkedList&listToCut){		//remove odd.
 	LinkedList*newList = new LinkedList();
 	assert(newList != NULL&&"Error,heap memory.");
-	//Node*current = newList->getHead();
 	Node*temp = listToCut.getHead();
 	int i = 0;
 	while (temp != NULL){								//check odd.
 		if (i % 2 == 0){
-			newList->addElement(temp->getValue());
-		//	current->setId(temp->getId());
-		//	current->getNext();
+			newList->addElement(temp);
 		}
 		temp = temp->getNext();
 		i++;
@@ -102,81 +97,3 @@ LinkedList*removeOddItems(LinkedList&listToCut){		//remove odd.
 
 	return newList;
 }
-
-/*#include <iostream> 
-#include "List.h"
-using namespace std;
-#include <cassert>
-#include <string>
-
-
-LinkedList * reverseList(LinkedList &listToReverse){
-	LinkedList *newlist = new LinkedList();
-	assert(newlist != 0);
-	Node *pop = listToReverse.getHead();
-	for (int i = 1; i <= listToReverse.size(); i++){
-		(*newlist).addElement((*pop).getValue());
-		pop = (*pop).getNext();
-	}
-	return newlist;
-}
-
-LinkedList * removeOddItems(LinkedList &listToCut){
-	LinkedList *newlist = new LinkedList();
-	assert(newlist != 0);
-	Node *pop = listToCut.getHead();
-	for (int i = 1; i <= listToCut.size(); i++){
-		if (i % 2 == 1){
-			(*newlist).addElement((*pop).getValue());
-		}
-		pop = (*pop).getNext();
-	}
-	LinkedList *newlist2 = reverseList(*newlist);
-	return newlist2;
-}
-
-int main()
-{
-
-	cout << "EXE6: Matan chibotero 204076962, liel levi 307983320" << endl;
-	cout << "******************" << endl;
-	bool b;
-	LinkedList a;
-	int x, num;
-	cout << "Please enter the number of nodes:";
-	cin >> x;
-	while (x <= 0){
-		cout << "Size no can to be <=0\nEnter again the size of list:" << endl;
-		cin >> x;
-	}
-	cout << "Please enter the nodes data (intiger) :";
-	cin >> num;
-	cin.ignore(500, '\n');
-	a.addElement(num);
-	cout << "number=" << num << ",id=" << a.getHead()->getId() - 1 << endl;
-	for (int i = 1; i <x; i++){
-		cout << "Please enter the nodes data (intiger) :";
-		cin >> num;
-		cin.ignore(500, '\n');
-		b = a.addElement(num, i);
-		while (b == false){
-			cout << "An existing number in the list\nEnter number in location:";
-			cin >> num;
-			b = a.addElement(num, i);
-		}
-		cout << "number=" << num << ",id=" << a.getHead()->getId() - 1 << endl;
-
-	}
-	cout << "the original list:";
-	a.print();
-	LinkedList *l = reverseList(a);
-	cout << "the reversed list:";
-	l->print();
-	LinkedList *k = removeOddItems(a);
-	cout << "the even nodes of the list is:";
-	k->print();
-	delete k;
-	delete l;
-	cin.get();
-	return 0;
-}*/
