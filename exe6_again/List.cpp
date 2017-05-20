@@ -77,6 +77,27 @@ bool LinkedList::addElement(const int newVal, int index){
 	return true;
 }
 
+bool LinkedList::addElement(const Node *node){
+	Node*newNode = new Node(*node);
+	Node*temp = head;
+
+	while (temp != '\0'){
+		if (temp->value == newNode->value||temp->id == newNode->id){
+			cout << "same value or id is allready exist." << endl;
+			return false;
+		}
+		temp = temp->next;
+	}
+
+	temp = head;			//temp hold the list.
+
+	head = newNode;		//header get new value and return to hold the list.
+	head->next = temp;
+
+	counter++;
+	return true;
+}
+
 bool LinkedList::removeElement(int index){
 	if (head == NULL){
 		cout << "list is empty." << endl;

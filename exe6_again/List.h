@@ -35,6 +35,7 @@ public:
 	Node* getHead(){ return head; }
 	bool addElement(const int newVal);
 	bool addElement(const int newVal, int index);
+	bool addElement(const Node *newNode);
 	bool removeElement(int index);
 	bool removeFirstElement();
 	void print();
